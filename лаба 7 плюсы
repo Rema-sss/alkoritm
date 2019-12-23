@@ -1,0 +1,86 @@
+//
+
+#include <iostream>
+#include <locale>
+#include "cmath"
+
+using namespace std;
+
+int po4ti_string(const char* stroka1) {
+	int i = 0;
+	while (*stroka1++)
+		++i;
+	return i;
+}
+
+char* Registr(char* stroka2)
+{
+	int i = 0, j = 0;
+	for (i = 0; i < po4ti_string(stroka2); i++) {
+		if (stroka2[i] >= 'A' && stroka2[i] <= 'Z') {
+			stroka2[i] += 32;
+		}
+	}
+
+	return stroka2;
+
+}
+
+int main()
+{
+	setlocale(LC_ALL, "Russian");
+	//11111111111111111111111111111111111111111111111111111
+	/*
+
+	char string[150];
+	cout << "Введите " << '\n';
+	cin >> string;
+	cout << po4ti_string(string)-1;
+
+	/**/
+
+	//22222222222222222222222222222222222222222222222222222222
+	/*
+	
+	int i, j;
+	char s1[150];
+	cout << "Введите " << endl;
+	cin.getline(s1, po4ti_string(s1));
+	for (i = 0; i < po4ti_string(s1); i++) {
+		if (s1[i] >= 'A' && s1[i] <= 'Z') {
+			s1[i] += 32;
+		}
+	}
+	cout << s1;
+
+	/**/
+
+	//33333333333333333333333333333333333333333333333
+	/*
+
+	setlocale(LC_ALL, "Russian");
+	int i;
+	bool proverochka = false;
+	char s1[150];
+	char s2[150];
+	cout << "Введите 1 " << '\n';
+	cin.getline(Registr(s1), po4ti_string(s1));
+	cout << "Введите 2" << '\n';
+	cin.getline(Registr(s2), po4ti_string(s2));
+	for (i = 0; i < po4ti_string(s1); i++) {
+		if (s1[i] == s2[i]) {
+			proverochka = true;
+		}
+		else {
+			proverochka = false;
+			break;
+		}
+	}
+	if (proverochka == true) {
+		cout << "yes";
+	}
+	else cout << "no"; 
+	
+	/**/
+
+}
